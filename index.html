@@ -9,7 +9,7 @@
         
         <link rel="shortcut icon" href="./img/favicon.ico">
 
-	<title>Nova Borba API</title>
+	<title>API</title>
 
         <link href="css/bootstrap-custom.min.css" rel="stylesheet">
         <link href="css/font-awesome-4.5.0.css" rel="stylesheet">
@@ -48,7 +48,7 @@
             
 
             <!-- Main title -->
-            <a class="navbar-brand" href=".">Nova Borba API</a>
+            <a class="navbar-brand" href=".">API</a>
         </div>
 
         <!-- Expanded navigation -->
@@ -120,7 +120,7 @@
     <h2 id="frontpage-layout">Frontpage layout</h2>
 
     <div class="top-content">
-    <p>Method    <span class="label label-primary">GET</span> &nbsp; <a href="http://www.novaborba.rs/api/v1/frontpages">http://www.novaborba.rs/api/v1/frontpages</a></p>
+    <p>Method    <span class="label label-primary">GET</span> &nbsp; <a href="http://www.my-site.com/api/v1/frontpages">http://www.my-site.com/api/v1/frontpages</a></p>
 
     <p>Description :    Current mobile layout with 15 news in order. </p>
     <p>Return <span class="label label-success">JSON</span> : </p>
@@ -132,10 +132,10 @@
                 "title":"News title",
                 "slug":"news-slug",
                 "summary":"Short content",
-                "link":"http:\/\/projectone.dev\/api\/v1\/post\/news-slug",
-                "thumb_image":"http://www.novaborba.rs/upload/image-100x100.jpg",
-                "main_image":"http://www.novaborba.rs/upload/image.jpg",
-                "mid_image":"http://www.novaborba.rs/upload/image-600x400.jpg"
+                "link":"http:\\http://www.my-site.com/api/v1/post/news-slug",
+                "thumb_image":"http://www.my-site.com/upload/image-100x100.jpg",
+                "main_image":"http://www.my-site.com/upload/image.jpg",
+                "mid_image":"http://www.my-site.com/upload/image-600x400.jpg"
             },
         }
         ...
@@ -150,7 +150,7 @@
 <div class="col-sm-12 item">
     <h2 id="all-categories">All categories</h2>
     <div class="top-content">
-    <p> Method    <span class="label label-primary">GET</span> &nbsp; <a href="http://www.novaborba.rs/api/v1/categories">http://www.novaborba.rs/api/v1/categories</a></p>
+    <p> Method    <span class="label label-primary">GET</span> &nbsp; <a href="http://www.my-site.com/api/v1/categories">http://www.my-site.com/api/v1/categories</a></p>
 
     <p>Description :    All news categories. </p>
     <p>Return <span class="label label-success">JSON</span> : </p>
@@ -166,7 +166,8 @@
                 "slug":"category-slug",
                 "ordering":1,
                 color":"cf2f19",
-                "link":"http:\/\/projectone.dev\/api\/v1\/category-slug"
+                "link":"http:\\http://www.my-site.com/api/v1/category-slug"
+
             },
         ]
         ...
@@ -179,8 +180,8 @@
 <div class="col-sm-12 item">
 <h2 id="single-category">Single category</h2>
 <div class="top-content">
-    <p> Method    <span class="label label-primary">GET</span> &nbsp; <span class="span-link">http://www.novaborba.rs/api/v1/category/{CATEGORY SLUG}</span></p>
-    <p> Method   <span class="label label-primary">GET</span> &nbsp; <span class="span-link">http://www.novaborba.rs/api/v1/category/{CATEGORY SLUG}/?page={1}</span></p>
+    <p> Method    <span class="label label-primary">GET</span> &nbsp; <span class="span-link">http://www.my-site.com/api/v1/category/{CATEGORY SLUG}</span></p>
+    <p> Method   <span class="label label-primary">GET</span> &nbsp; <span class="span-link">http://www.my-site.com/api/v1/category/{CATEGORY SLUG}/?page={1}</span></p>
 
     <p>Description :    All news with details in this category with pagination ( 15 news per page ). </p>
     <p>Return <span class="label label-success">JSON</span> : </p>
@@ -205,9 +206,9 @@
                     "timezone_type":3,
                     "timezone":"UTC"
                 },
-                "thumb_image":"http://www.novaborba.rs/upload/image-100x100.jpg",
-                "main_image":"http://www.novaborba.rs/upload/image.jpg",
-                "mid_image":"http://www.novaborba.rs/upload/image-600x400.jpg"
+                "thumb_image":"http://www.my-site.com/upload/image-100x100.jpg",
+                "main_image":"http://www.my-site.com/upload/image.jpg",
+                "mid_image":"http://www.my-site.com/upload/image-600x400.jpg"
             },
         ]
         ...
@@ -221,7 +222,7 @@
 <div class="col-sm-12 item">
 <h2 id="single-news">Single news</h2>
 <div class="top-content">
-    <p> Method    <span class="label label-primary">GET</span> &nbsp; <span class="span-link">http://www.novaborba.rs/api/v1/post/{NEWS SLUG}</span></p>
+    <p> Method    <span class="label label-primary">GET</span> &nbsp; <span class="span-link">http://www.my-site.com/api/v1/post/{NEWS SLUG}</span></p>
     
     <p>Description :    All details for single news. </p>
     <p>Return <span class="label label-success">JSON</span> : </p>
@@ -234,7 +235,7 @@
                 "slug":"news-slug",
                 "summary":"Short content",
                 "content":"Content",
-                "link":"http:\/\/projectone.dev\/api\/v1\/pages\/news-slug",
+                "link":"link":"http://www.my-site.com/api/v1/pages/news-slug",
                 "views":202,
                 "created":{
                     "date":"2016-08-25 09:11:33",
@@ -246,9 +247,9 @@
                     "timezone_type":3,
                     "timezone":"UTC"
                 },
-                "thumb_image":"http://www.novaborba.rs/upload/image-100x100.jpg",
-                "main_image":"http://www.novaborba.rs/upload/image.jpg",
-                "mid_image":"http://www.novaborba.rs/upload/image-600x400.jpg"
+                "thumb_image":"http://www.my-site.com/upload/image-100x100.jpg",
+                "main_image":"http://www.my-site.com/upload/image.jpg",
+                "mid_image":"http://www.my-site.com/upload/image-600x400.jpg"
             }
         ]
 </code></pre>
@@ -261,8 +262,8 @@
 <div class="col-sm-12 item">
 <h2 id="comments-for-single-news">Comments for single news</h2>
 <div class="top-content">
-    <p> Method    <span class="label label-primary">GET</span> &nbsp; <span class="span-link">http://www.novaborba.rs/api/v1/comments/{NEWS SLUG}</span></p>
-    <p> Method    <span class="label label-primary">GET</span> &nbsp; <span class="span-link">http://www.novaborba.rs/api/v1/comments/{NEWS SLUG}/?page=1</span></p>
+    <p> Method    <span class="label label-primary">GET</span> &nbsp; <span class="span-link">http://www.my-site.com/api/v1/comments/{NEWS SLUG}</span></p>
+    <p> Method    <span class="label label-primary">GET</span> &nbsp; <span class="span-link">http://www.my-site.com/api/v1/comments/{NEWS SLUG}/?page=1</span></p>
     
     <p>Description :  Comments for single news with pagination ( 10 comments per page ). </p>
     <p>Return <span class="label label-success">JSON</span> : </p>
@@ -291,7 +292,7 @@
 <div class="col-sm-12 item">
 <h2 id="all-pages">All pages</h2>
 <div class="top-content">
-    <p> Method    <span class="label label-primary">GET</span> &nbsp; <a href="http://www.novaborba.rs/api/v1/pages">http://www.novaborba.rs/api/v1/pages</a></p>
+    <p> Method    <span class="label label-primary">GET</span> &nbsp; <a href="http://www.my-site.com/api/v1/pages">http://www.my-site.com/api/v1/pages</a></p>
     
     <p>Description :    All pages with details for every page. </p>
     <p>Return <span class="label label-success">JSON</span> : </p>
@@ -304,7 +305,7 @@
                 "slug":"page-slug",
                 "summary":"Short content",
                 "content":"Content",
-                "link":"http:\/\/projectone.dev\/api\/v1\/pages\/page-slug",
+                "link":"http:\\http://www.my-site.com/api/v1/pages/page-slug",
                 "views":0,
                 "created":{
                   "date":"2016-10-03 10:03:15",
@@ -316,9 +317,9 @@
                   "timezone_type":3,
                   "timezone":"UTC"
                 },
-                "thumb_image":"http://www.novaborba.rs/upload/image-100x100.jpg",
-                "main_image":"http://www.novaborba.rs/upload/image.jpg",
-                "mid_image":"http://www.novaborba.rs/upload/image-600x400.jpg"
+                "thumb_image":"http://www.my-site.com/upload/image-100x100.jpg",
+                "main_image":"http://www.my-site.com/upload/image.jpg",
+                "mid_image":"http://www.my-site.com/upload/image-600x400.jpg"
             },
         ]
         ...
@@ -333,7 +334,7 @@
 <div class="col-sm-12 item">
 <h2 id="single-page">Single page</h2>
 <div class="top-content">
-    <p> Method    <span class="label label-primary">GET</span> &nbsp; <span class="span-link">http://www.novaborba.rs/api/v1/page/{PAGE SLUG}</span></p>
+    <p> Method    <span class="label label-primary">GET</span> &nbsp; <span class="span-link">http://www.my-site.com/api/v1/page/{PAGE SLUG}</span></p>
     
     <p>Description :    Single page with all details. </p>
     <p>Return <span class="label label-success">JSON</span> : </p>
@@ -346,7 +347,7 @@
                 "slug":"page-slug",
                 "summary":"Short content",
                 "content":"Content",
-                "link":"http:\/\/projectone.dev\/api\/v1\/pages\/page-slug",
+                link":"http://www.my-site.com/api/v1/pages/page-slug",
                 "views":0,
                 "created":{
                   "date":"2016-10-03 10:03:15",
@@ -358,9 +359,9 @@
                   "timezone_type":3,
                   "timezone":"UTC"
                 },
-                "thumb_image":"http://www.novaborba.rs/upload/image-100x100.jpg",
-                "main_image":"http://www.novaborba.rs/upload/image.jpg",
-                "mid_image":"http://www.novaborba.rs/upload/image-600x400.jpg"
+                "thumb_image":"http://www.my-site.com/upload/image-100x100.jpg",
+                "main_image":"http://www.my-site.com/upload/image.jpg",
+                "mid_image":"http://www.my-site.com/upload/image-600x400.jpg"
             },
         ]
 </code></pre>

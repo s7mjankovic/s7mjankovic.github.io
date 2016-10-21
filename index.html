@@ -21,7 +21,20 @@
             <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
             <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
         <![endif]-->
-
+<style>
+    .item {
+        margin: 25px 0px 10px;
+    }
+    .top-content{
+        padding: 10px;
+    }
+    pre, code, code .hljs-name, code .hljs-string {
+        color: #222 !important;
+    }
+    .span-link {
+        color: #2fa4e7;
+    }
+</style>
         
     </head>
 
@@ -100,100 +113,262 @@
 <li>All pages</li>
 <li>Single page</li>
 </ul>
-<h2 id="frontpage-layout">Frontpage layout</h2>
-<pre><code>Link        :    http://www.novaborba.rs/api/v1/frontpages
 
-Description :    Current mobile layout with 15 news in order.
 
-Return      :    - news title
-                 - news slug
-                 - news summary
-                 - news images (full, thumb_mid and thumb)
-</code></pre>
-<h2 id="all-categories">All categories</h2>
-<pre><code>Link        :    http://www.novaborba.rs/api/v1/categories
+<div class="row">
+<div class="col-sm-12 item">
+    <h2 id="frontpage-layout">Frontpage layout</h2>
 
-Description :    All news categories.
+    <div class="top-content">
+    <p>Method    <span class="label label-primary">GET</span> &nbsp; <a href="http://www.novaborba.rs/api/v1/frontpages">http://www.novaborba.rs/api/v1/frontpages</a></p>
 
-Return      :    - category title
-                 - category slug
-                 - category ordering
-                 - category color
-                 - category link
-</code></pre>
+    <p>Description :    Current mobile layout with 15 news in order. </p>
+    <p>Return <span class="label label-success">JSON</span> : </p>
+    </div>
+    <pre>
+    <code>
+        {
+        "1":{
+                "title":"News title",
+                "slug":"news-slug",
+                "summary":"Short content",
+                "link":"http:\/\/projectone.dev\/api\/v1\/post\/news-slug",
+                "thumb_image":"http://www.novaborba.rs/upload/image-100x100.jpg",
+                "main_image":"http://www.novaborba.rs/upload/image.jpg",
+                "mid_image":"http://www.novaborba.rs/upload/image-600x400.jpg"
+            },
+        }
+        ...
+    </code>
+    </pre>
+</div>
+</div>
+
+
+
+<div class="row">
+<div class="col-sm-12 item">
+    <h2 id="all-categories">All categories</h2>
+    <div class="top-content">
+    <p> Method    <span class="label label-primary">GET</span> &nbsp; <a href="http://www.novaborba.rs/api/v1/categories">http://www.novaborba.rs/api/v1/categories</a></p>
+
+    <p>Description :    All news categories. </p>
+    <p>Return <span class="label label-success">JSON</span> : </p>
+    </div>
+
+   
+
+    
+    <pre><code>
+        [
+            {
+                "name":"Category name",
+                "slug":"category-slug",
+                "ordering":1,
+                color":"cf2f19",
+                "link":"http:\/\/projectone.dev\/api\/v1\/category-slug"
+            },
+        ]
+        ...
+    </code></pre>
+</div>
+</div>
+
+
+<div class="row">
+<div class="col-sm-12 item">
 <h2 id="single-category">Single category</h2>
-<pre><code>Link        :    http://www.novaborba.rs/api/v1/category/CATEGORY SLUG
+<div class="top-content">
+    <p> Method    <span class="label label-primary">GET</span> &nbsp; <span class="span-link">http://www.novaborba.rs/api/v1/category/{CATEGORY SLUG}</span></p>
+    <p> Method   <span class="label label-primary">GET</span> &nbsp; <span class="span-link">http://www.novaborba.rs/api/v1/category/{CATEGORY SLUG}/?page={1}</span></p>
 
-Pagination  :    http://www.novaborba.rs/api/v1/category/CATEGORY SLUG/?page=1
+    <p>Description :    All news with details in this category with pagination ( 15 news per page ). </p>
+    <p>Return <span class="label label-success">JSON</span> : </p>
+</div>
 
-Description :    All news with details in this category with pagination ( 15 news per page ).
+<pre><code>
 
-Return      :    - news title
-                 - news slug
-                 - news summary
-                 - news content
-                 - news views
-                 - created ( datetime obj )
-                 - last update ( datetime obj )
-                 - news images (full, thumb_mid and thumb)
+        [
+            {
+                "title":"News title",
+                "slug":"news-title",
+                "summary":"Short content",
+                "content":"News content",
+                "views":202,
+                "created":{
+                    "date":"2016-08-25 09:11:33",
+                    "timezone_type":3,
+                    "timezone":"UTC"
+                },
+                "updated":{
+                    "date":"2016-10-13 11:16:25",
+                    "timezone_type":3,
+                    "timezone":"UTC"
+                },
+                "thumb_image":"http://www.novaborba.rs/upload/image-100x100.jpg",
+                "main_image":"http://www.novaborba.rs/upload/image.jpg",
+                "mid_image":"http://www.novaborba.rs/upload/image-600x400.jpg"
+            },
+        ]
+        ...
 </code></pre>
+</div>
+</div>
+
+
+
+<div class="row">
+<div class="col-sm-12 item">
 <h2 id="single-news">Single news</h2>
-<pre><code>Link        :    http://www.novaborba.rs/api/v1/post/NEWS SLUG
+<div class="top-content">
+    <p> Method    <span class="label label-primary">GET</span> &nbsp; <span class="span-link">http://www.novaborba.rs/api/v1/post/{NEWS SLUG}</span></p>
+    
+    <p>Description :    All details for single news. </p>
+    <p>Return <span class="label label-success">JSON</span> : </p>
+</div>
+<pre><code>
 
-Description :    All details for single news.
-
-Return      :    - news title
-                 - news slug
-                 - news summary
-                 - news content
-                 - news views
-                 - created ( datetime obj )
-                 - last update ( datetime obj )
-                 - news images (full, thumb_mid and thumb)
+        [
+            {
+                "title":"News title",
+                "slug":"news-slug",
+                "summary":"Short content",
+                "content":"Content",
+                "link":"http:\/\/projectone.dev\/api\/v1\/pages\/news-slug",
+                "views":202,
+                "created":{
+                    "date":"2016-08-25 09:11:33",
+                    "timezone_type":3,
+                    "timezone":"UTC"
+                },
+                "updated":{
+                    "date":"2016-10-13 11:16:25",
+                    "timezone_type":3,
+                    "timezone":"UTC"
+                },
+                "thumb_image":"http://www.novaborba.rs/upload/image-100x100.jpg",
+                "main_image":"http://www.novaborba.rs/upload/image.jpg",
+                "mid_image":"http://www.novaborba.rs/upload/image-600x400.jpg"
+            }
+        ]
 </code></pre>
+</div>
+</div>
+
+
+
+<div class="row">
+<div class="col-sm-12 item">
 <h2 id="comments-for-single-news">Comments for single news</h2>
-<pre><code>Link        :    http://www.novaborba.rs/api/v1/comments/NEWS SLUG
+<div class="top-content">
+    <p> Method    <span class="label label-primary">GET</span> &nbsp; <span class="span-link">http://www.novaborba.rs/api/v1/comments/{NEWS SLUG}</span></p>
+    <p> Method    <span class="label label-primary">GET</span> &nbsp; <span class="span-link">http://www.novaborba.rs/api/v1/comments/{NEWS SLUG}/?page=1</span></p>
+    
+    <p>Description :  Comments for single news with pagination ( 10 comments per page ). </p>
+    <p>Return <span class="label label-success">JSON</span> : </p>
+</div>
 
-Pagination  :    http://www.novaborba.rs/api/v1/comments/NEWS SLUG/?page=1
+<pre><code>     
 
-Description :     Comments for single news with pagination ( 10 comments per page ).
-
-Return      :    - comment author name
-                 - comment content
-                 - created ( datetime obj )
-                 - comment number of LIKES
-                 - comments number of DISLIKES
+       [
+            {
+                "name":"Author name",
+                "content":"Comment content",
+                "created":"27.05.2016 12:10",
+                "likes":1,
+                "dislikes":1
+            },
+        ]
+        ...
 </code></pre>
+</div>
+</div>
+
+
+
+
+<div class="row">
+<div class="col-sm-12 item">
 <h2 id="all-pages">All pages</h2>
-<pre><code>Link        :    http://www.novaborba.rs/api/v1/pages
+<div class="top-content">
+    <p> Method    <span class="label label-primary">GET</span> &nbsp; <a href="http://www.novaborba.rs/api/v1/pages">http://www.novaborba.rs/api/v1/pages</a></p>
+    
+    <p>Description :    All pages with details for every page. </p>
+    <p>Return <span class="label label-success">JSON</span> : </p>
+</div>
 
-Description :    All pages with details for every page.
-
-Return      :    - page title
-                 - page slug
-                 - page summary
-                 - page content
-                 - page link
-                 - page views
-                 - created ( datetime obj )
-                 - last update ( datetime obj )
-                 - page images (full, thumb_mid and thumb)
+<pre><code>
+        [
+            {
+                "title":"Page",
+                "slug":"page-slug",
+                "summary":"Short content",
+                "content":"Content",
+                "link":"http:\/\/projectone.dev\/api\/v1\/pages\/page-slug",
+                "views":0,
+                "created":{
+                  "date":"2016-10-03 10:03:15",
+                  "timezone_type":3,
+                  "timezone":"UTC"
+                },
+                "updated":{
+                  "date":"2016-10-13 08:08:52",
+                  "timezone_type":3,
+                  "timezone":"UTC"
+                },
+                "thumb_image":"http://www.novaborba.rs/upload/image-100x100.jpg",
+                "main_image":"http://www.novaborba.rs/upload/image.jpg",
+                "mid_image":"http://www.novaborba.rs/upload/image-600x400.jpg"
+            },
+        ]
+        ...
 </code></pre>
+</div>
+</div>
+
+
+
+
+<div class="row">
+<div class="col-sm-12 item">
 <h2 id="single-page">Single page</h2>
-<pre><code>Link        :    http://www.novaborba.rs/api/v1/page/PAGE SLUG
+<div class="top-content">
+    <p> Method    <span class="label label-primary">GET</span> &nbsp; <span class="span-link">http://www.novaborba.rs/api/v1/page/{PAGE SLUG}</span></p>
+    
+    <p>Description :    Single page with all details. </p>
+    <p>Return <span class="label label-success">JSON</span> : </p>
+</div>
 
-Description :    Single page with all details.
+<pre><code>
+        [
+            {
+                "title":"Page",
+                "slug":"page-slug",
+                "summary":"Short content",
+                "content":"Content",
+                "link":"http:\/\/projectone.dev\/api\/v1\/pages\/page-slug",
+                "views":0,
+                "created":{
+                  "date":"2016-10-03 10:03:15",
+                  "timezone_type":3,
+                  "timezone":"UTC"
+                },
+                "updated":{
+                  "date":"2016-10-13 08:08:52",
+                  "timezone_type":3,
+                  "timezone":"UTC"
+                },
+                "thumb_image":"http://www.novaborba.rs/upload/image-100x100.jpg",
+                "main_image":"http://www.novaborba.rs/upload/image.jpg",
+                "mid_image":"http://www.novaborba.rs/upload/image-600x400.jpg"
+            },
+        ]
+</code></pre>
+</div>
+</div>
 
-Return      :    - page title
-                 - page slug
-                 - page summary
-                 - page content
-                 - page link
-                 - page views
-                 - created ( datetime obj )
-                 - last update ( datetime obj )
-                 - page images (full, thumb_mid and thumb)
-</code></pre></div>
+
+</div>
             
         </div>
 
